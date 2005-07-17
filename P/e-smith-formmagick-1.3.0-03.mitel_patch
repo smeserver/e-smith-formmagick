@@ -1,0 +1,73 @@
+Index: e-smith-formmagick/e-smith-formmagick.spec
+diff -u e-smith-formmagick/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm:1.62 e-smith-formmagick/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm:1.63
+--- e-smith-formmagick/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm:1.62	Fri Oct 10 16:51:51 2003
++++ e-smith-formmagick/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm	Wed Oct 22 12:02:28 2003
+@@ -3,12 +3,12 @@
+ # This program is free software; you can redistribute it and/or
+ # modify it under the same terms as Perl itself.
+ #
+-# $Id: FormMagick.pm,v 1.61 2003/09/03 18:51:57 gordonr Exp $
++# $Id: FormMagick.pm,v 1.62 2003/10/10 20:51:51 msoulier Exp $
+ #----------------------------------------------------------------------
+ 
+ package    esmith::FormMagick;
+ 
+-our $VERSION = sprintf '%d.%03d', q$Revision: 1.61 $ =~ /: (\d+).(\d+)/;
++our $VERSION = sprintf '%d.%03d', q$Revision: 1.62 $ =~ /: (\d+).(\d+)/;
+ 
+ use CGI::FormMagick;
+ use Exporter;
+@@ -277,15 +277,6 @@
+ 	    next;
+ 	}
+ 
+-#	foreach my $super (super_languages($lang))
+-#	{
+-#	    if (-d "$lexdir/$super")
+-#	    {
+-#		push @languages, $super;
+-#		next;
+-#	    }
+-#	}
+-
+ 	push @missing_languages, $lang;
+     }
+ 
+@@ -376,9 +367,27 @@
+ 
+     my ($pref_lang) = $self->get_languages();
+ 
++    my ($lex1, $lex2);
++    foreach my $pref_lang ($self->get_languages())
++    {
++        if (-e "$lexdir/$pref_lang/FormMagick/general")
++        {
++            $lex1 = "$lexdir/$pref_lang/FormMagick/general";
++            last;
++        }
++    }
++    foreach my $pref_lang ($self->get_languages())
++    {
++        if (-e "$lexdir/$pref_lang/$scriptname")
++        {
++            $lex2 = "$lexdir/$pref_lang/$scriptname";
++            last;
++        }
++    }
++
+     my @lexfiles = (
+-        "$lexdir/$pref_lang/FormMagick/general",
+-        "$lexdir/$pref_lang/$scriptname"
++        $lex1,
++        $lex2
+     );
+ 
+     foreach (@{$args{more_lexicons}}) {
+@@ -386,7 +395,6 @@
+     }
+     return @lexfiles;
+ }
+-
+ 
+ =head2 _read_lexicons
+ 

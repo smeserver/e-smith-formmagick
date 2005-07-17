@@ -1,0 +1,64 @@
+Index: e-smith-formmagick/e-smith-formmagick.spec
+diff -u e-smith-formmagick/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm:1.61 e-smith-formmagick/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm:1.62
+--- e-smith-formmagick/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm:1.61	Wed Sep  3 14:51:57 2003
++++ e-smith-formmagick/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm	Fri Oct 10 16:51:51 2003
+@@ -3,12 +3,12 @@
+ # This program is free software; you can redistribute it and/or
+ # modify it under the same terms as Perl itself.
+ #
+-# $Id: FormMagick.pm,v 1.60 2003/06/21 02:55:13 gordonr Exp $
++# $Id: FormMagick.pm,v 1.61 2003/09/03 18:51:57 gordonr Exp $
+ #----------------------------------------------------------------------
+ 
+ package    esmith::FormMagick;
+ 
+-our $VERSION = sprintf '%d.%03d', q$Revision: 1.60 $ =~ /: (\d+).(\d+)/;
++our $VERSION = sprintf '%d.%03d', q$Revision: 1.61 $ =~ /: (\d+).(\d+)/;
+ 
+ use CGI::FormMagick;
+ use Exporter;
+@@ -876,6 +876,44 @@
+                         -value => $msg);
+     $self->{cgi}->param(-name  => 'status_type',
+                         -value => 'error');
++    return undef;
++}
++
++=head2 display_error
++
++This method displays an error using the sme-error style. This should be
++used when displaying a page, and the error() method is not applicable.
++
++=cut
++
++sub display_error
++{
++    my $self = shift;
++    my $msg = shift;
++    my $q = $self->{cgi};
++
++    print $q->Tr($q->td({ -colspan => 2 }, 
++                    $q->div({ -class => 'sme-error' },
++                    $self->localise($msg))));
++    return undef;
++}   
++
++=head2 display_success
++
++This method displays a success message using the success style. This should be
++used when displaying a page, and the success() method is not applicable.
++
++=cut
++
++sub display_success
++{
++    my $self = shift;
++    my $msg = shift;
++    my $q = $self->{cgi};
++
++    print $q->Tr($q->td({ -colspan => 2 },
++                    $q->div({ -class => 'success' },
++                    $self->localise($msg))));
+     return undef;
+ }
+ 

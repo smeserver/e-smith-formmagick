@@ -1,0 +1,61 @@
+Index: e-smith-formmagick/e-smith-formmagick.spec
+diff -u e-smith-formmagick/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm:1.67 e-smith-formmagick/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm:1.68
+--- e-smith-formmagick/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm:1.67	Tue Nov  9 16:23:17 2004
++++ e-smith-formmagick/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm	Wed Nov 10 15:04:13 2004
+@@ -3,12 +3,12 @@
+ # This program is free software; you can redistribute it and/or
+ # modify it under the same terms as Perl itself.
+ #
+-# $Id: FormMagick.pm,v 1.66 2004/10/01 14:52:48 msoulier Exp $
++# $Id: FormMagick.pm,v 1.67 2004/11/09 21:23:17 charlieb Exp $
+ #----------------------------------------------------------------------
+ 
+ package    esmith::FormMagick;
+ 
+-our $VERSION = sprintf '%d.%03d', q$Revision: 1.66 $ =~ /: (\d+).(\d+)/;
++our $VERSION = sprintf '%d.%03d', q$Revision: 1.67 $ =~ /: (\d+).(\d+)/;
+ 
+ use CGI::FormMagick;
+ use Exporter;
+@@ -393,12 +393,12 @@
+ 
+     my ($pref_lang) = $self->get_languages();
+ 
+-    my ($lex0, $lex1, $lex2);
++    my @lexfiles = ();
+     foreach my $pref_lang ($self->get_languages())
+     {
+         if (-e "$lexdir/$pref_lang/FormMagick/builtins")
+         {
+-            $lex0 = "$lexdir/$pref_lang/FormMagick/builtins";
++            push @lexfiles, "$lexdir/$pref_lang/FormMagick/builtins";
+             last;
+         }
+     }
+@@ -406,7 +406,7 @@
+     {
+         if (-e "$lexdir/$pref_lang/FormMagick/general")
+         {
+-            $lex1 = "$lexdir/$pref_lang/FormMagick/general";
++            push @lexfiles, "$lexdir/$pref_lang/FormMagick/general";
+             last;
+         }
+     }
+@@ -414,16 +414,10 @@
+     {
+         if (-e "$lexdir/$pref_lang/$scriptname")
+         {
+-            $lex2 = "$lexdir/$pref_lang/$scriptname";
++            push @lexfiles, "$lexdir/$pref_lang/$scriptname";
+             last;
+         }
+     }
+-
+-    my @lexfiles = (
+-        $lex0,
+-        $lex1,
+-        $lex2
+-    );
+ 
+     foreach (@{$args{more_lexicons}}) {
+         push @lexfiles, "$lexdir/$pref_lang/$_";

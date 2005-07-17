@@ -1,0 +1,34 @@
+Index: e-smith-formmagick/e-smith-formmagick.spec
+diff -u e-smith-formmagick/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm:1.66 e-smith-formmagick/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm:1.67
+--- e-smith-formmagick/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm:1.66	Fri Oct  1 10:52:48 2004
++++ e-smith-formmagick/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm	Tue Nov  9 16:23:17 2004
+@@ -3,12 +3,12 @@
+ # This program is free software; you can redistribute it and/or
+ # modify it under the same terms as Perl itself.
+ #
+-# $Id: FormMagick.pm,v 1.65 2004/08/05 16:23:31 msoulier Exp $
++# $Id: FormMagick.pm,v 1.66 2004/10/01 14:52:48 msoulier Exp $
+ #----------------------------------------------------------------------
+ 
+ package    esmith::FormMagick;
+ 
+-our $VERSION = sprintf '%d.%03d', q$Revision: 1.65 $ =~ /: (\d+).(\d+)/;
++our $VERSION = sprintf '%d.%03d', q$Revision: 1.66 $ =~ /: (\d+).(\d+)/;
+ 
+ use CGI::FormMagick;
+ use Exporter;
+@@ -447,8 +447,12 @@
+     my $lextext = "";
+     foreach (@_) {
+         local $/ = undef;
+-        open (LEXIN, $_) or warn "Can't open lexicon file $_: $!";
+-        $lextext .= <LEXIN>;
++        unless (open (LEXIN, $_))
++	{
++	    warn "Can't open lexicon file $_: $!";
++	    next;
++	}
++	$lextext .= <LEXIN>;
+     }
+     return $lextext;
+ }
