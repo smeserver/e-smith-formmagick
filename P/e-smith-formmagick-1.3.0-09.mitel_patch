@@ -1,6 +1,7 @@
-diff -Nur -x '*.orig' -x '*.rej' e-smith-formmagick-1.3.0/root/etc/e-smith/locale/en-us/FormMagick/general mezzanine_patched_e-smith-formmagick-1.3.0/root/etc/e-smith/locale/en-us/FormMagick/general
---- e-smith-formmagick-1.3.0/root/etc/e-smith/locale/en-us/FormMagick/general	2005-07-17 11:45:00.331458888 -0600
-+++ mezzanine_patched_e-smith-formmagick-1.3.0/root/etc/e-smith/locale/en-us/FormMagick/general	2005-07-17 11:40:36.254507296 -0600
+Index: e-smith-formmagick/e-smith-formmagick.spec
+diff -u e-smith-formmagick/root/etc/e-smith/locale/en-us/FormMagick/general:1.3 e-smith-formmagick/root/etc/e-smith/locale/en-us/FormMagick/general:1.4
+--- e-smith-formmagick/root/etc/e-smith/locale/en-us/FormMagick/general:1.3	Fri Oct  1 10:52:48 2004
++++ e-smith-formmagick/root/etc/e-smith/locale/en-us/FormMagick/general	Mon Jul 18 18:55:55 2005
 @@ -16,4 +16,240 @@
              scroll down and find the specific problem.
          </trans>

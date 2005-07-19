@@ -2,7 +2,7 @@ Summary: e-smith-formmagick Perl modules for web manager i18n
 %define name e-smith-formmagick
 Name: %{name}
 %define version 1.3.0
-%define release 08sme01
+%define release 09
 Version: %{version}
 Release: %{release}
 License: Artistic
@@ -14,7 +14,7 @@ Patch2: e-smith-formmagick-1.3.0-04.mitel_patch
 Patch3: e-smith-formmagick-1.3.0-06.mitel_patch
 Patch4: e-smith-formmagick-1.3.0-07.mitel_patch
 Patch5: e-smith-formmagick-1.3.0-08.mitel_patch
-Patch6: e-smith-formmagick-1.3.0-L10N.patch
+Patch6: e-smith-formmagick-1.3.0-09.mitel_patch
 BuildRoot: /var/tmp/%{name}-{%version}-%{release}-buildroot/
 Requires: perl(CGI::FormMagick) >= 0.91-05
 Requires: perl(WWW::Automate) >= 0.20
@@ -25,9 +25,9 @@ BuildRequires: e-smith-devtools >= 1.6.6
 BuildArchitectures: noarch
 
 %changelog
-* Sun Jul 17 2005 Shad L. Lords <slords@mail.com>
-- [1.3.0-08sme01]
-- Add english tags for formmagick validation
+* Mon Jul 18 2005 Charlie Brady <charlieb@e-smith.com>
+- [1.3.0-09]
+- Add english tags for formmagick validation [SF: 1157116 (Shad)]
 
 * Wed Nov 10 2004 Charlie Brady <charlieb@e-smith.com>
 - [1.3.0-08]
