@@ -2,7 +2,7 @@ Summary: e-smith-formmagick Perl modules for web manager i18n
 %define name e-smith-formmagick
 Name: %{name}
 %define version 1.3.0
-%define release 09
+%define release 10
 Version: %{version}
 Release: %{release}
 License: Artistic
@@ -15,8 +15,9 @@ Patch3: e-smith-formmagick-1.3.0-06.mitel_patch
 Patch4: e-smith-formmagick-1.3.0-07.mitel_patch
 Patch5: e-smith-formmagick-1.3.0-08.mitel_patch
 Patch6: e-smith-formmagick-1.3.0-09.mitel_patch
+Patch7: e-smith-formmagick-1.3.0-10.mitel_patch
 BuildRoot: /var/tmp/%{name}-{%version}-%{release}-buildroot/
-Requires: perl(CGI::FormMagick) >= 0.91-05
+Requires: perl(CGI::FormMagick) >= 0.91-28
 Requires: perl(WWW::Automate) >= 0.20
 Requires: perl(Crypt::Cracklib)
 Requires: perl(I18N::LangTags) >= 0.27
@@ -25,6 +26,11 @@ BuildRequires: e-smith-devtools >= 1.6.6
 BuildArchitectures: noarch
 
 %changelog
+* Mon Sep  5 2005 Tony Clayton <apc@e-smith.com>
+- [1.3.0-10]
+- Update requires to CGI::FormMagick >= 0.91-28
+- Fix esmith::FormMagick constructor brokenness for IbayPlugin compatibility
+
 * Mon Jul 18 2005 Charlie Brady <charlieb@e-smith.com>
 - [1.3.0-09]
 - Add english tags for formmagick validation [SF: 1157116 (Shad)]
@@ -401,6 +407,7 @@ convenience functions used to create SMEServer server-manager panels.
 %patch4 -p1
 %patch5 -p1
 %patch6 -p1
+%patch7 -p1
 
 %build
 # build the test suite from embedded tests
