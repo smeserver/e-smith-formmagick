@@ -1,21 +1,13 @@
 Summary: e-smith-formmagick Perl modules for web manager i18n
 %define name e-smith-formmagick
 Name: %{name}
-%define version 1.3.0
-%define release 10
+%define version 1.3.2
+%define release 02
 Version: %{version}
 Release: %{release}
 License: Artistic
 Group: Applications/CPAN
 Source0: %{name}-%{version}.tar.gz
-Patch0: e-smith-formmagick-1.3.0-02.mitel_patch
-Patch1: e-smith-formmagick-1.3.0-03.mitel_patch
-Patch2: e-smith-formmagick-1.3.0-04.mitel_patch
-Patch3: e-smith-formmagick-1.3.0-06.mitel_patch
-Patch4: e-smith-formmagick-1.3.0-07.mitel_patch
-Patch5: e-smith-formmagick-1.3.0-08.mitel_patch
-Patch6: e-smith-formmagick-1.3.0-09.mitel_patch
-Patch7: e-smith-formmagick-1.3.0-10.mitel_patch
 BuildRoot: /var/tmp/%{name}-{%version}-%{release}-buildroot/
 Requires: perl(CGI::FormMagick) >= 0.91-28
 Requires: perl(WWW::Automate) >= 0.20
@@ -26,6 +18,29 @@ BuildRequires: e-smith-devtools >= 1.6.6
 BuildArchitectures: noarch
 
 %changelog
+* Wed Nov 30 2005 Gordon Rowell <gordonr@gormand.com.au> 1.3.2-02
+- Bump release number only
+
+* Fri Oct 14 2005 Gordon Rowell <gordonr@e-smith.com>
+- [1.3.2-01]
+- Remove L10Ns from base packages [SF: 1309520]
+
+* Fri Oct 14 2005 Gordon Rowell <gordonr@e-smith.com>
+- [1.3.1-01]
+- New dev stream before relocating L10Ns
+
+* Fri Sep 30 2005 Gordon Rowell <gordonr@e-smith.com>
+- [1.3.0-13]
+- Added Italian L10N - Thanks Filippo Carletti [SF: 1309266]
+
+* Fri Sep 30 2005 Gordon Rowell <gordonr@e-smith.com>
+- [1.3.0-12]
+- Added tag for unlocalised string - thanks Filippo Carletti [SF: 1309284]
+
+* Mon Sep 26 2005 Gordon Rowell <gordonr@e-smith.com>
+- [1.3.0-11]
+- Added German L10N - Thanks Dietmar Berteld [SF: 1293325]
+
 * Mon Sep  5 2005 Tony Clayton <apc@e-smith.com>
 - [1.3.0-10]
 - Update requires to CGI::FormMagick >= 0.91-28
@@ -400,14 +415,6 @@ convenience functions used to create SMEServer server-manager panels.
 
 %prep
 %setup -q -n %{name}-%{version}
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
-%patch6 -p1
-%patch7 -p1
 
 %build
 # build the test suite from embedded tests
