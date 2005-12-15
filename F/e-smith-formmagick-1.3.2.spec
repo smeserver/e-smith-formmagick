@@ -2,12 +2,13 @@ Summary: e-smith-formmagick Perl modules for web manager i18n
 %define name e-smith-formmagick
 Name: %{name}
 %define version 1.3.2
-%define release 02
+%define release 03
 Version: %{version}
 Release: %{release}
 License: Artistic
 Group: Applications/CPAN
 Source0: %{name}-%{version}.tar.gz
+Patch0: e-smith-formmagick-1.3.2-PasswordStrength.patch
 BuildRoot: /var/tmp/%{name}-{%version}-%{release}-buildroot/
 Requires: perl(CGI::FormMagick) >= 0.91-28
 Requires: perl(WWW::Automate) >= 0.20
@@ -18,6 +19,11 @@ BuildRequires: e-smith-devtools >= 1.6.6
 BuildArchitectures: noarch
 
 %changelog
+* Thu Dec 15 2005 Gordon Rowell <gordonr@gormand.com.au> 1.3.2-03
+- 'strong' passwords must meet both Cracklib and the standard password
+   mantra: Upper Case AND Lower Case AND Digits AND Special characters
+   AND at least seven characters long [SME: 161]
+
 * Wed Nov 30 2005 Gordon Rowell <gordonr@gormand.com.au> 1.3.2-02
 - Bump release number only
 
@@ -415,6 +421,7 @@ convenience functions used to create SMEServer server-manager panels.
 
 %prep
 %setup -q -n %{name}-%{version}
+%patch0 -p1 
 
 %build
 # build the test suite from embedded tests
