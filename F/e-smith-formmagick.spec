@@ -2,9 +2,10 @@ Summary: e-smith-formmagick Perl modules for web manager i18n
 %define name e-smith-formmagick
 Name: %{name}
 %define version 1.4.0
-%define release 03
+%define release 4
 Version: %{version}
-Release: %{release}
+Release: %smerelease %{release}
+Packager: %{_packager}
 License: Artistic
 Group: Applications/CPAN
 Source0: %{name}-%{version}.tar.gz
@@ -18,6 +19,10 @@ BuildRequires: e-smith-devtools >= 1.6.6
 BuildArchitectures: noarch
 
 %changelog
+* Thu Dec 07 2006 Shad L. Lords <slords@mail.com>
+- Update to new release naming.  No functional changes.
+- Make Packager generic
+
 * Wed Apr 5 2006 Gordon Rowell <gordonr@gormand.com.au> 1.4.0-03
 - Revert last change [SME: 1193]
 
