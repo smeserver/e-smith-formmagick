@@ -2,12 +2,13 @@ Summary: e-smith-formmagick Perl modules for web manager i18n
 %define name e-smith-formmagick
 Name: %{name}
 %define version 1.4.0
-%define release 4
+%define release 5
 Version: %{version}
 Release: %{release}%{?dist}
 License: Artistic
 Group: Applications/CPAN
 Source0: %{name}-%{version}.tar.gz
+Patch0: e-smith-formmagick-1.4.0-passlength.patch
 BuildRoot: /var/tmp/%{name}-{%version}-%{release}-buildroot/
 Requires: perl(CGI::FormMagick) >= 0.91-28
 Requires: perl(WWW::Automate) >= 0.20
@@ -18,6 +19,9 @@ BuildRequires: e-smith-devtools >= 1.6.6
 BuildArchitectures: noarch
 
 %changelog
+* Fri Jun 1 2007 Shad L. Lords <slords@mail.com> 1.4.0-5
+- pam_unix requires passwords >= 6 [SME: 3039]
+
 * Sun Apr 29 2007 Shad L. Lords <slords@mail.com>
 - Clean up spec so package can be built by koji/plague
 
@@ -436,6 +440,7 @@ convenience functions used to create SMEServer server-manager panels.
 
 %prep
 %setup -q -n %{name}-%{version}
+%patch0 -p1
 
 %build
 # build the test suite from embedded tests
