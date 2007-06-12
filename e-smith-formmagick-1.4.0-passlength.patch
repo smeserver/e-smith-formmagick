@@ -1,0 +1,14 @@
+diff -Nur -x '*.orig' -x '*.rej' e-smith-formmagick-1.4.0/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm mezzanine_patched_e-smith-formmagick-1.4.0/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm
+--- e-smith-formmagick-1.4.0/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm	2006-03-15 14:59:29.000000000 -0700
++++ mezzanine_patched_e-smith-formmagick-1.4.0/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm	2007-06-01 13:59:21.000000000 -0600
+@@ -794,6 +794,9 @@
+ 
+     my $reason;
+ 
+-    return "OK" if ($strength eq "none");
++    if ($strength eq "none") {
++        return $fm->localise("Passwords must be at least 7 characters long") unless (length($pass) > 6);
++        return "OK";
++    }
+ 
+     $reason = $fm->call_fm_validation('password', $pass, undef);
