@@ -2,7 +2,7 @@ Summary: e-smith-formmagick Perl modules for web manager i18n
 %define name e-smith-formmagick
 Name: %{name}
 %define version 1.4.0
-%define release 5
+%define release 6
 Version: %{version}
 Release: %{release}%{?dist}
 License: Artistic
@@ -19,6 +19,9 @@ BuildRequires: e-smith-devtools >= 1.6.6
 BuildArchitectures: noarch
 
 %changelog
+* Thu Nov 08 2007 Gavin Weight <gweight@gmail.com> 1.4.0-6
+- Remove/Fix Formmagick.pm.orig file. [SME: 3526]
+
 * Fri Jun 1 2007 Shad L. Lords <slords@mail.com> 1.4.0-5
 - pam_unix requires passwords >= 6 [SME: 3039]
 
