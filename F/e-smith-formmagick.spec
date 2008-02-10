@@ -2,7 +2,7 @@ Summary: e-smith-formmagick Perl modules for web manager i18n
 %define name e-smith-formmagick
 Name: %{name}
 %define version 1.4.0
-%define release 7
+%define release 8
 Version: %{version}
 Release: %{release}%{?dist}
 License: Artistic
@@ -10,6 +10,7 @@ Group: Applications/CPAN
 Source0: %{name}-%{version}.tar.gz
 Patch0: e-smith-formmagick-1.4.0-passlength.patch
 Patch1: e-smith-formmagick-1.4.0-headers.patch
+Patch2: e-smith-formmagick-1.4.0-add2general.patch
 BuildRoot: /var/tmp/%{name}-{%version}-%{release}-buildroot/
 Requires: perl(CGI::FormMagick) >= 0.91-28
 Requires: perl(WWW::Automate) >= 0.20
@@ -20,6 +21,9 @@ BuildRequires: e-smith-devtools >= 1.6.6
 BuildArchitectures: noarch
 
 %changelog
+* Sun Feb 10 2008 Stephen Noble <support@dungog.net> 1.4.0-8
+- Added more common <base> entries to general [SME: 3886]
+
 * Sun Feb 10 2008 Stephen Noble <support@dungog.net> 1.4.0-7
 - Added header <base> entries to general [SME: 3896]
 
@@ -449,6 +453,7 @@ convenience functions used to create SMEServer server-manager panels.
 %setup -q -n %{name}-%{version}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 # build the test suite from embedded tests
