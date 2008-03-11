@@ -24,7 +24,7 @@ BuildArchitectures: noarch
 
 %changelog
 * Mon Mar 10 2008 Shad L. Lords <slords@mail.com> 1.4.0-10
-- Cefault charset to UTF-8 unless specified [SME: 3858]
+- Default charset to UTF-8 unless specified [SME: 3858]
 
 * Wed Feb 13 2008 Stephen Noble <support@dungog.net> 1.4.0-9
 - And more common <base> entries to general [SME: 3886]
