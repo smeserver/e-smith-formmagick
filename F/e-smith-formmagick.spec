@@ -2,7 +2,7 @@ Summary: e-smith-formmagick Perl modules for web manager i18n
 %define name e-smith-formmagick
 Name: %{name}
 %define version 1.4.0
-%define release 9
+%define release 10
 Version: %{version}
 Release: %{release}%{?dist}
 License: Artistic
@@ -12,16 +12,20 @@ Patch0: e-smith-formmagick-1.4.0-passlength.patch
 Patch1: e-smith-formmagick-1.4.0-headers.patch
 Patch2: e-smith-formmagick-1.4.0-add2general.patch
 Patch3: e-smith-formmagick-1.4.0-add2general.patch2
+Patch4: e-smith-formmagick-1.4.0-UTF8.patch
 BuildRoot: /var/tmp/%{name}-{%version}-%{release}-buildroot/
-Requires: perl(CGI::FormMagick) >= 0.91-28
+Requires: perl(CGI::FormMagick) >= 0.92-15
 Requires: perl(WWW::Automate) >= 0.20
 Requires: perl(Crypt::Cracklib)
 Requires: perl(I18N::LangTags) >= 0.27
-Requires: e-smith-lib >= 1.13.1-07
+Requires: e-smith-lib >= 1.18.0-21
 BuildRequires: e-smith-devtools >= 1.6.6
 BuildArchitectures: noarch
 
 %changelog
+* Mon Mar 10 2008 Shad L. Lords <slords@mail.com> 1.4.0-10
+- Cefault charset to UTF-8 unless specified [SME: 3858]
+
 * Wed Feb 13 2008 Stephen Noble <support@dungog.net> 1.4.0-9
 - And more common <base> entries to general [SME: 3886]
 
@@ -459,6 +463,7 @@ convenience functions used to create SMEServer server-manager panels.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 # build the test suite from embedded tests

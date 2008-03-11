@@ -1,0 +1,21 @@
+diff -Nur -x '*.orig' -x '*.rej' e-smith-formmagick-1.4.0/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm mezzanine_patched_e-smith-formmagick-1.4.0/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm
+--- e-smith-formmagick-1.4.0/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm	2008-03-10 18:34:44.000000000 -0600
++++ mezzanine_patched_e-smith-formmagick-1.4.0/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm	2008-03-10 18:31:41.000000000 -0600
+@@ -133,7 +133,7 @@
+ 
+     more_lexicons       a list of additional lexicon files to use
+     charset             the character set encoding of the lexicon files
+-                        (default is ISO-8859-1 (Latin1)).
++                        (default is UTF-8).
+ 
+ Notes on lexicon files:
+ 
+@@ -217,7 +217,7 @@
+     }
+ 
+     my $sessiondir = "/var/cache/e-smith/formmagick/sessions";
+-    my $charset = $args{charset} || 'ISO-8859-1';
++    my $charset = $args{charset} || 'UTF-8';
+ 
+     $self = CGI::FormMagick::new($class, 
+                 type => 'string', 
