@@ -1,7 +1,7 @@
 diff -Nur -x '*.orig' -x '*.rej' e-smith-formmagick-1.4.0/root/etc/e-smith/locale/en-us/FormMagick/general mezzanine_patched_e-smith-formmagick-1.4.0/root/etc/e-smith/locale/en-us/FormMagick/general
 --- e-smith-formmagick-1.4.0/root/etc/e-smith/locale/en-us/FormMagick/general	2008-04-23 22:47:51.000000000 +0200
 +++ mezzanine_patched_e-smith-formmagick-1.4.0/root/etc/e-smith/locale/en-us/FormMagick/general	2008-04-23 22:43:49.000000000 +0200
-@@ -129,6 +129,342 @@
+@@ -129,6 +129,336 @@
          </trans>
      </entry>
      <entry>
@@ -77,7 +77,7 @@ diff -Nur -x '*.orig' -x '*.rej' e-smith-formmagick-1.4.0/root/etc/e-smith/local
 +        </trans>
 +    </entry>
 +    <entry>
-+        <base></base>
++        <base>CREATE_GROUP</base>
 +        <trans>
 +            Create user group
 +        </trans>
@@ -140,12 +140,6 @@ diff -Nur -x '*.orig' -x '*.rej' e-smith-formmagick-1.4.0/root/etc/e-smith/local
 +        <base>GROUP_NAME</base>
 +        <trans>
 +            Group Name
-+        </trans>
-+    </entry>
-+    <entry>
-+        <base></base>
-+        <trans>
-+            Group
 +        </trans>
 +    </entry>
 +    <entry>
