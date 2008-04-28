@@ -2,7 +2,7 @@ Summary: e-smith-formmagick Perl modules for web manager i18n
 %define name e-smith-formmagick
 Name: %{name}
 %define version 1.4.0
-%define release 12
+%define release 13
 Version: %{version}
 Release: %{release}%{?dist}
 License: Artistic
@@ -24,6 +24,9 @@ BuildRequires: e-smith-devtools >= 1.6.6
 BuildArchitectures: noarch
 
 %changelog
+* Mon Apr 28 2008 Shad L. Lords <slords@mail.com> 1.4.0-13
+- Bump release to allow rebuild
+
 * Fri Apr 25 2008 Shad L. Lords <slords@mail.com> 1.4.0-12
 - Update requires to really pull in perl-CGI-FormMagick [SME: 4269]
 
