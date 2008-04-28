@@ -28,7 +28,7 @@ BuildArchitectures: noarch
 - Update requires to really pull in perl-CGI-FormMagick [SME: 4269]
 
 * Wed Apr 23 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.4.0-11
-- And more common <base> entries to general
+- And more common <base> entries to general [SME: 4289]
 
 * Mon Mar 10 2008 Shad L. Lords <slords@mail.com> 1.4.0-10
 - Default charset to UTF-8 unless specified [SME: 3858]
