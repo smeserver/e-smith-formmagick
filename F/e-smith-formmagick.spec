@@ -2,7 +2,7 @@ Summary: e-smith-formmagick Perl modules for web manager i18n
 %define name e-smith-formmagick
 Name: %{name}
 %define version 1.4.0
-%define release 13
+%define release 15
 Version: %{version}
 Release: %{release}%{?dist}
 License: Artistic
@@ -24,6 +24,12 @@ BuildRequires: e-smith-devtools >= 1.6.6
 BuildArchitectures: noarch
 
 %changelog
+* Tue Jul 8 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.4.0-15
+- Moving single occurence for HOSTTYPE back to e-smith-hosts
+
+* Sat Jul 5 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.4.0-14
+- Added missing entry to general [SME: 4289]
+
 * Mon Apr 28 2008 Shad L. Lords <slords@mail.com> 1.4.0-13
 - Bump release to allow rebuild
 
