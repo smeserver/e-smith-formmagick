@@ -2,7 +2,7 @@ Summary: e-smith-formmagick Perl modules for web manager i18n
 %define name e-smith-formmagick
 Name: %{name}
 %define version 1.4.0
-%define release 15
+%define release 16
 Version: %{version}
 Release: %{release}%{?dist}
 License: Artistic
@@ -24,6 +24,10 @@ BuildRequires: e-smith-devtools >= 1.6.6
 BuildArchitectures: noarch
 
 %changelog
+* Sun Jul 27 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.4.0-16
+- Fix password verify entry text box description in ibays panel entry 
+  in e-smith-formmagick's general [SME: 4460]
+
 * Tue Jul 8 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.4.0-15
 - Moving single occurence for HOSTTYPE back to e-smith-hosts
 
@@ -505,4 +509,3 @@ echo "%doc LICENSE" >> %{name}-%{version}-%{release}-filelist
 
 %files -f %{name}-%{version}-%{release}-filelist
 %defattr(-,root,root)
-
