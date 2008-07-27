@@ -185,7 +185,7 @@ diff -Nur -x '*.orig' -x '*.rej' e-smith-formmagick-1.4.0/root/etc/e-smith/local
 +        </trans>
 +    </entry>
 +    <entry>
-+        <base>PASSWORD_NEW_VERIFY</base>
++        <base>PASSWORD_VERIFY_NEW</base>
 +        <trans>
 +            New password (verify):
 +        </trans>
