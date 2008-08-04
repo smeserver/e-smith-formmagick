@@ -2,7 +2,7 @@ Summary: e-smith-formmagick Perl modules for web manager i18n
 %define name e-smith-formmagick
 Name: %{name}
 %define version 1.4.0
-%define release 17
+%define release 18
 Version: %{version}
 Release: %{release}%{?dist}
 License: Artistic
@@ -24,6 +24,9 @@ BuildRequires: e-smith-devtools >= 1.6.6
 BuildArchitectures: noarch
 
 %changelog
+* Mon Aug  4 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.4.0-18
+- Reverting some locale changes
+
 * Sun Jul 27 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.4.0-17
 - Revert patch here and fix in e-smith-ibays instead because of multiple 
   dependencies and incorrect naming scheme
