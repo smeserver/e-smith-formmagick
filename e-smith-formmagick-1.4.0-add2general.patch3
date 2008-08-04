@@ -35,7 +35,7 @@ diff -Nur -x '*.orig' -x '*.rej' e-smith-formmagick-1.4.0/root/etc/e-smith/local
 +        </trans>
 +    </entry>
 +    <entry>
-+        <base>ERROR_PASSWORD_CHANGE</base>
++        <base>PASSWORD_CHANGE_ERROR</base>
 +        <trans>
 +            An error occurred while attempting to change your password. Please make sure that the old password entered is correct.
 +        </trans>
@@ -293,7 +293,7 @@ diff -Nur -x '*.orig' -x '*.rej' e-smith-formmagick-1.4.0/root/etc/e-smith/local
 +        </trans>
 +    </entry>
 +    <entry>
-+        <base>PASSWORD_NO_MATCH</base>
++        <base>PASSWORD_VERIFY_ERROR</base>
 +        <trans>
 +            The passwords you entered did not match.
 +        </trans>
@@ -305,7 +305,7 @@ diff -Nur -x '*.orig' -x '*.rej' e-smith-formmagick-1.4.0/root/etc/e-smith/local
 +        </trans>
 +    </entry>
 +    <entry>
-+        <base>ACCOUNT_GROUP_NONE</base>
++        <base>NO_GROUPS</base>
 +        <trans>
 +            There are no user groups in the system.
 +        </trans>
