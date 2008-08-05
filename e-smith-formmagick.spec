@@ -2,7 +2,7 @@ Summary: e-smith-formmagick Perl modules for web manager i18n
 %define name e-smith-formmagick
 Name: %{name}
 %define version 1.4.0
-%define release 18
+%define release 19
 Version: %{version}
 Release: %{release}%{?dist}
 License: Artistic
@@ -14,6 +14,7 @@ Patch2: e-smith-formmagick-1.4.0-add2general.patch
 Patch3: e-smith-formmagick-1.4.0-add2general.patch2
 Patch4: e-smith-formmagick-1.4.0-UTF8.patch
 Patch5: e-smith-formmagick-1.4.0-add2general.patch3
+Patch6: e-smith-formmagick-1.4.0-RevertInvalidLocaleReversion.patch
 BuildRoot: /var/tmp/%{name}-{%version}-%{release}-buildroot/
 Requires: perl-CGI-FormMagick >= 0.92-16.el4.sme
 Requires: perl(WWW::Automate) >= 0.20
@@ -24,6 +25,9 @@ BuildRequires: e-smith-devtools >= 1.6.6
 BuildArchitectures: noarch
 
 %changelog
+* Tue Aug  5 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.4.0-19
+- Revert previous invalid locale changes (reverting to 1.4.0-17) [SME: 4472]
+
 * Mon Aug  4 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.4.0-18
 - Reverting some locale changes
 
@@ -492,6 +496,7 @@ convenience functions used to create SMEServer server-manager panels.
 %patch3 -p1
 %patch4 -p1
 %patch5 -p1
+%patch6 -p1
 
 %build
 # build the test suite from embedded tests
