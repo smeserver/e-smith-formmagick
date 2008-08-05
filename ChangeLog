@@ -93,3 +93,8 @@ Sun Jul 27 22:40:39 2008                   Jonathan Martens (jonathan)
 - Revert patch here and fix in e-smith-ibays instead because of multiple
   dependencies and incorrect naming scheme
 ----------------------------------------------------------------------
+Tue Aug  5 19:33:15 2008                                    smebuilder
+
+* Tue Aug  5 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.4.0-19
+- Revert previous invalid locale changes (reverting to 1.4.0-17) [SME: 4472]
+----------------------------------------------------------------------
