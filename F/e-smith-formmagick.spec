@@ -29,6 +29,7 @@ BuildArchitectures: noarch
 %changelog
 * Thu Aug  7 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.4.0-20
 - Move RESET_PASSWORD_TITLE to general [SME: 4475]
+- Reverting all *PASSWORD_NO_MATCH to *PASSWORD_VERIFY_ERROR locale keys [SME: 4476]
 - Add YOUR_ACCOUNT_INVALID to general [SME: 4478]
 
 * Tue Aug  5 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.4.0-19
