@@ -2,7 +2,7 @@ Summary: e-smith-formmagick Perl modules for web manager i18n
 %define name e-smith-formmagick
 Name: %{name}
 %define version 1.4.0
-%define release 19
+%define release 20
 Version: %{version}
 Release: %{release}%{?dist}
 License: Artistic
@@ -15,6 +15,9 @@ Patch3: e-smith-formmagick-1.4.0-add2general.patch2
 Patch4: e-smith-formmagick-1.4.0-UTF8.patch
 Patch5: e-smith-formmagick-1.4.0-add2general.patch3
 Patch6: e-smith-formmagick-1.4.0-RevertInvalidLocaleReversion.patch
+Patch7: e-smith-formmagick-1.4.0-FixAndMoveRESET_PASSWORD_TITLE.patch
+Patch8: e-smith-formmagick-1.4.0-AddYOUR_ACCOUNT_INVALID.patch
+patch9: e-smith-formmagick-1.4.0-fixPASSWORD_VERIFY_ERROR.patch
 BuildRoot: /var/tmp/%{name}-{%version}-%{release}-buildroot/
 Requires: perl-CGI-FormMagick >= 0.92-16.el4.sme
 Requires: perl(WWW::Automate) >= 0.20
@@ -25,6 +28,11 @@ BuildRequires: e-smith-devtools >= 1.6.6
 BuildArchitectures: noarch
 
 %changelog
+* Thu Aug  7 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.4.0-20
+- Move RESET_PASSWORD_TITLE to general [SME: 4475]
+- Reverting all *PASSWORD_NO_MATCH to *PASSWORD_VERIFY_ERROR locale keys [SME: 4476]
+- Add YOUR_ACCOUNT_INVALID to general [SME: 4478]
+
 * Tue Aug  5 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.4.0-19
 - Revert previous invalid locale changes (reverting to 1.4.0-17) [SME: 4472]
 
@@ -497,6 +505,9 @@ convenience functions used to create SMEServer server-manager panels.
 %patch4 -p1
 %patch5 -p1
 %patch6 -p1
+%patch7 -p1
+%patch8 -p1
+%patch9 -p1
 
 %build
 # build the test suite from embedded tests
