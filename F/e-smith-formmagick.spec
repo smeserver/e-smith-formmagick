@@ -17,6 +17,7 @@ Patch5: e-smith-formmagick-1.4.0-add2general.patch3
 Patch6: e-smith-formmagick-1.4.0-RevertInvalidLocaleReversion.patch
 Patch7: e-smith-formmagick-1.4.0-FixAndMoveRESET_PASSWORD_TITLE.patch
 Patch8: e-smith-formmagick-1.4.0-AddYOUR_ACCOUNT_INVALID.patch
+patch9: e-smith-formmagick-1.4.0-fixPASSWORD_VERIFY_ERROR.patch
 BuildRoot: /var/tmp/%{name}-{%version}-%{release}-buildroot/
 Requires: perl-CGI-FormMagick >= 0.92-16.el4.sme
 Requires: perl(WWW::Automate) >= 0.20
@@ -506,6 +507,7 @@ convenience functions used to create SMEServer server-manager panels.
 %patch6 -p1
 %patch7 -p1
 %patch8 -p1
+%patch9 -p1
 
 %build
 # build the test suite from embedded tests
