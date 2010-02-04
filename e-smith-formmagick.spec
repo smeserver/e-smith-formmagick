@@ -1,15 +1,16 @@
-# $Id: e-smith-formmagick.spec,v 1.18 2008/10/07 18:17:02 slords Exp $
+# $Id: e-smith-formmagick.spec,v 1.19 2010/02/04 19:06:24 slords Exp $
 
 Summary: e-smith-formmagick Perl modules for web manager i18n
 %define name e-smith-formmagick
 Name: %{name}
 %define version 2.2.0
-%define release 1
+%define release 2
 Version: %{version}
 Release: %{release}%{?dist}
 License: Artistic
 Group: Applications/CPAN
 Source0: %{name}-%{version}.tar.gz
+Patch1: e-smith-formmagick-2.2.0-lib64.patch
 BuildRoot: /var/tmp/%{name}-{%version}-%{release}-buildroot/
 Requires: perl-CGI-FormMagick >= 0.92-16.el4.sme
 Requires: perl(WWW::Automate) >= 0.20
@@ -20,6 +21,9 @@ BuildRequires: e-smith-devtools >= 1.6.6
 BuildArchitectures: noarch
 
 %changelog
+* Thu Feb 4 2010 Shad L. Lords <slords@mail.com> 2.2.0-2.sme
+- Update path for 64-bit compatibility [SME: 5756]
+
 * Tue Oct 7 2008 Shad L. Lords <slords@mail.com> 2.2.0-1.sme
 - Roll new stream to separate sme7/sme8 trees [SME: 4633]
 
@@ -493,6 +497,7 @@ convenience functions used to create SMEServer server-manager panels.
 
 %prep
 %setup -q -n %{name}-%{version}
+%patch1 -p1
 
 %build
 # build the test suite from embedded tests

@@ -1,0 +1,16 @@
+diff -up e-smith-formmagick-2.2.0/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm.lib64 e-smith-formmagick-2.2.0/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm
+--- e-smith-formmagick-2.2.0/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm.lib64	2008-10-07 11:35:38.000000000 -0600
++++ e-smith-formmagick-2.2.0/root/usr/lib/perl5/site_perl/esmith/FormMagick.pm	2010-02-04 11:38:27.000000000 -0700
+@@ -804,7 +804,11 @@ sub validate_password
+     return $reason unless ($reason eq "OK");
+     return "OK" unless ($strength eq "strong");
+ 
+-    $reason = fascist_check($pass, '/usr/lib/cracklib_dict');
++    if ( -f '/usr/lib64/cracklib_dict.pwd' ) {
++        $reason = fascist_check($pass, '/usr/lib64/cracklib_dict');
++    } else {
++        $reason = fascist_check($pass, '/usr/lib/cracklib_dict');
++    }
+     $reason ||= "Software error: password check failed";
+ 
+     return "OK" if ($reason eq "ok");
