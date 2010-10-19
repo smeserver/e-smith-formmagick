@@ -1,0 +1,16 @@
+diff -up e-smith-formmagick-2.2.0/root/etc/e-smith/locale/en-us/FormMagick/general.ip-fqdn e-smith-formmagick-2.2.0/root/etc/e-smith/locale/en-us/FormMagick/general
+--- e-smith-formmagick-2.2.0/root/etc/e-smith/locale/en-us/FormMagick/general.ip-fqdn	2008-10-07 19:35:39.000000000 +0200
++++ e-smith-formmagick-2.2.0/root/etc/e-smith/locale/en-us/FormMagick/general	2010-10-19 19:45:42.000000000 +0200
+@@ -283,6 +283,12 @@
+         </trans>
+     </entry>
+     <entry>
++        <base>IP_ADDRESS_OR_FQDN</base>
++        <trans>
++            IP Address or FQDN
++        </trans>
++    </entry>
++    <entry>
+         <base>USER_INVALID</base>
+         <trans>
+             Invalid user

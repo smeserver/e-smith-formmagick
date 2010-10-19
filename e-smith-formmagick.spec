@@ -1,17 +1,17 @@
-# $Id: e-smith-formmagick.spec,v 1.20 2010/10/17 15:19:13 snetram Exp $
+# $Id: e-smith-formmagick.spec,v 1.21 2010/10/19 17:51:27 snetram Exp $
 
 Summary: e-smith-formmagick Perl modules for web manager i18n
 %define name e-smith-formmagick
 Name: %{name}
 %define version 2.2.0
-%define release 3
+%define release 4
 Version: %{version}
 Release: %{release}%{?dist}
 License: Artistic
 Group: Applications/CPAN
 Source0: %{name}-%{version}.tar.gz
 Patch1: e-smith-formmagick-2.2.0-lib64.patch
-Patch2: e-smith-formmagick-2.2.0-ip-fqdn.patch
+Patch2: e-smith-formmagick-2.2.0-ip-fqdn-new.patch
 BuildRoot: /var/tmp/%{name}-{%version}-%{release}-buildroot/
 Requires: perl-CGI-FormMagick >= 0.92-16.el4.sme
 Requires: perl(WWW::Automate) >= 0.20
@@ -22,6 +22,10 @@ BuildRequires: e-smith-devtools >= 1.6.6
 BuildArchitectures: noarch
 
 %changelog
+* Tue Oct 19 2010 Jonathan Martens <smeserver-contribs@snetram.nl> 2.2.0-4.sme
+- Revert previous change as it might cause regression in contribs [SME: 6296]
+- Add additional locale string [SME: 6296]
+
 * Sun Oct 17 2010 Jonathan Martens <smeserver-contribs@snetram.nl> 2.2.0-3.sme
 - Update textbox description to also reflect the option of a FQDN [SME: 6296]
 
